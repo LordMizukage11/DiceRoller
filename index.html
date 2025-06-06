@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dice Roller</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎲 Dice Roller Deluxe 🎲</h1>
+    
+    <div class="tabs">
+        <button class="tab-button" onclick="switchSystem('dnd', this)">D&D</button>
+        <button class="tab-button" onclick="switchSystem('exalted', this)">Exalted</button>
+        <button class="tab-button" onclick="switchSystem('oneRing', this)">The One Ring</button>
+        <button class="tab-button" onclick="switchSystem('ore', this)">Reign (ORE)</button>
+    </div>
+
+    <div id="roller" class="roller-panel"></div>
+    <div id="history" class="history-panel"></div>
+    <div style="text-align: center; margin-top: 1rem;">
+        <button onclick="clearHistory()" style="background: #e53935; color: white; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer;">
+            Clear History
+        </button>
+    </div>
+
+  </div>
+  <script src="diceRoll.js"></script>
+</body>
+</html>
