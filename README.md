@@ -9,7 +9,8 @@ A simple web-based dice rolling tool for various tabletop systems. Includes opti
 - Saves your rolls into your local browser so you can look back at past rolls
 
 ## How to Use
-1. Visit the [DiceRoller Website](https://lordmizukage11.github.io/DiceRollerk 
+1. Visit https://lordmizukage11.github.io/DiceRoller/
+2. Choose your system and roll
 
 ## License
 This project is licensed under the MIT License.
