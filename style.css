@@ -1,26 +1,26 @@
 /* ==============================
-   Color Variables
+   🎨 Color Variables
 ============================== */
 :root {
-  --color-primary: #8e4cd9;       /* Main purple */
+  --color-primary: #8e4cd9;       /* Accent purple */
   --color-primary-dark: #7c41bf;  /* Darker purple */
   --color-accent: #d8bfd8;        /* Lavender */
-  --color-bg-light: #ffffff;
-  --color-text: #fff;
-  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-bg-light: #f4f4f9;      /* Light background */
+  --color-text: #333;
+  --color-shadow: rgba(0, 0, 0, 0.2);
 }
 
 /* ==============================
-   Animated Gradient Background
+   🌈 Subtle Animated Gradient Background
 ============================== */
 body {
   font-family: 'Raleway', sans-serif;
   margin: 0;
   padding: 0;
   color: var(--color-text);
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-  background-size: 400% 400%;
-  animation: gradientMove 12s ease infinite;
+  background: linear-gradient(135deg, var(--color-bg-light), var(--color-accent));
+  background-size: 300% 300%;
+  animation: gradientMove 15s ease infinite;
 }
 
 @keyframes gradientMove {
@@ -30,29 +30,29 @@ body {
 }
 
 /* ==============================
-   Glassmorphism Container
+   🪟 Glassmorphism Container
 ============================== */
 .container {
   max-width: 600px;
   margin: 2rem auto;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.6);
   border-radius: 15px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 8px 20px var(--color-shadow);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 15px var(--color-shadow);
   text-align: center;
 }
 
 /* ==============================
-   Tabs
+   🔘 Tabs
 ============================== */
 .tabs button {
   flex: 1;
   padding: 0.75rem;
   margin: 0 0.25rem;
   border: none;
-  background: rgba(255, 255, 255, 0.2);
-  color: var(--color-text);
+  background: rgba(142, 76, 217, 0.1);
+  color: var(--color-primary-dark);
   cursor: pointer;
   border-radius: 8px;
   font-weight: bold;
@@ -61,22 +61,23 @@ body {
 
 .tabs button:hover {
   background: var(--color-primary);
-  box-shadow: 0 0 12px var(--color-accent);
+  color: #fff;
+  box-shadow: 0 0 10px var(--color-accent);
 }
 
 .tab-button.active {
   background: var(--color-primary);
-  color: var(--color-text);
+  color: #fff;
 }
 
 /* ==============================
-   Roller Panel
+   🎲 Roller Button with Shake
 ============================== */
 .roller-panel button {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   background: var(--color-primary);
-  color: var(--color-text);
+  color: #fff;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -89,26 +90,14 @@ body {
   transform: scale(1.05);
 }
 
-/* Shake Animation on Click */
 .roller-panel button:active {
   animation: shake 0.4s ease;
 }
 
 @keyframes shake {
   0% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
   100% { transform: translateX(0); }
-}
-
-/* ==============================
-   History Panel
-============================== */
-.history-panel {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 1rem;
-  border-radius: 10px;
-  color: var(--color-text);
-  text-align: left;
 }
