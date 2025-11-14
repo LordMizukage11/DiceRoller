@@ -1,126 +1,114 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f4f4f9;
-  margin: 0;
-  padding: 0;
-  color: #333;
+/* ==============================
+   Color Variables
+============================== */
+:root {
+  --color-primary: #8e4cd9;       /* Main purple */
+  --color-primary-dark: #7c41bf;  /* Darker purple */
+  --color-accent: #d8bfd8;        /* Lavender */
+  --color-bg-light: #ffffff;
+  --color-text: #fff;
+  --color-shadow: rgba(0, 0, 0, 0.3);
 }
 
+/* ==============================
+   Animated Gradient Background
+============================== */
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--color-text);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ==============================
+   Glassmorphism Container
+============================== */
 .container {
   max-width: 600px;
   margin: 2rem auto;
-  padding: 1rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px var(--color-shadow);
   text-align: center;
-  color: #444;
 }
 
-.tabs {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 1rem;
-}
-
+/* ==============================
+   Tabs
+============================== */
 .tabs button {
   flex: 1;
-  padding: 0.5rem;
+  padding: 0.75rem;
   margin: 0 0.25rem;
   border: none;
-  background: #ddd;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--color-text);
   cursor: pointer;
-  border-radius: 4px;
-  transition: background 0.3s;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .tabs button:hover {
-  background: #8e4cd9;
+  background: var(--color-primary);
+  box-shadow: 0 0 12px var(--color-accent);
 }
 
 .tab-button.active {
-  background: #8e4cd9;
-  color: white;
-  font-weight: bold;
+  background: var(--color-primary);
+  color: var(--color-text);
 }
 
-
-.roller-panel {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
+/* ==============================
+   Roller Panel
+============================== */
 .roller-panel button {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  background: #8e4cd9;
-  color: white;
+  background: var(--color-primary);
+  color: var(--color-text);
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
 .roller-panel button:hover {
-  background: #7c41bf;
+  background: var(--color-primary-dark);
+  box-shadow: 0 0 15px var(--color-accent);
+  transform: scale(1.05);
 }
 
+/* Shake Animation on Click */
+.roller-panel button:active {
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* ==============================
+   History Panel
+============================== */
 .history-panel {
-  background: #f9f9f9;
+  background: rgba(255, 255, 255, 0.15);
   padding: 1rem;
-  border-radius: 6px;
-  border: 1px solid #ddd;
+  border-radius: 10px;
+  color: var(--color-text);
+  text-align: left;
 }
-
-.history-panel h3 {
-  margin-top: 0;
-}
-
-.history-panel ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.history-panel li {
-  padding: 0.25rem 0;
-  border-bottom: 1px solid #eee;
-}
-
-.input-group {
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.input-group label {
-  font-weight: bold;
-  margin-bottom: 0.25rem;
-  color: #333;
-}
-
-.input-group input[type="text"],
-.input-group input[type="number"] {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.checkbox-group {
-  display: flex;
-  gap: 1rem;
-  margin-top: 0.25rem;
-}
-
-.checkbox-group label {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  font-weight: normal;
-}
-
-
